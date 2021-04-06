@@ -1,0 +1,5 @@
+perl generate_sys.pl katalogwert.xml katalogwert_sys.xml
+catmandu convert MARC --type XML to MARC --type ALEPHSEQ < katalogwert_sys.xml > a150.seq
+grep -vP '^.{10}001' a150.seq > a150.new
+mv a150.new a150.seq
+
